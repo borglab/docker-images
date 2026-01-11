@@ -1,4 +1,4 @@
-# Basic Ubuntu 18.04 image with Boost and TBB installed. To be used for building further downstream packages.
+# Basic Ubuntu 24.04 (noble) image with Boost and TBB installed. To be used for building further downstream packages.
 
 # Get the base Ubuntu image from Docker Hub
 FROM ubuntu:noble
