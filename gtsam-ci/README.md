@@ -47,3 +47,21 @@ The base images install a comprehensive suite of development tools required by G
 - `libtbb-dev`
 - `libmetis-dev`
 - `python3-numpy`, `libpython3-dev`
+
+## Adding a New Image Variant
+
+To support a new Ubuntu version or compiler configuration:
+
+1.  **Create a new Dockerfile**:
+    -   Follow the naming convention: `ubuntu-<version>-<compiler>-<version>.Dockerfile` (e.g., `ubuntu-24.04-clang-17.Dockerfile`).
+    -   If it's a new base Ubuntu version, create `ubuntu-<version>-base.Dockerfile` first.
+
+2.  **Define the Image**:
+    -   Copy an existing Dockerfile that is closest to your target configuration.
+    -   Update the `FROM` instruction if necessary.
+    -   Update the `RUN` commands to install the desired compiler versions.
+    -   For compiler images, ensure you set the environment variables `CC` and `CXX` correctly.
+
+3.  **Build and Test**:
+    -   Build the image locally to ensure it works: `docker build -f <your-dockerfile> .`
+    -   The `build_and_push.sh` script will automatically pick up the new file because it iterates over `*.Dockerfile`.
