@@ -26,7 +26,18 @@ These extend the base images by setting up specific compilers.
 
 The `build_and_push.sh` script automates the process of building these images and pushing them to Docker Hub.
 
-**Usage:**
+### Authentication
+
+Before running the script, you must be authenticated with Docker Hub. You can do this by running:
+
+```bash
+docker login
+```
+
+You will be prompted for your username and password (or access token).
+
+### Usage
+
 ```bash
 ./build_and_push.sh <dockerhub-username>
 ```
