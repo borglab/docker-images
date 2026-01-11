@@ -17,6 +17,7 @@ These extend the base images by setting up specific compilers.
 - `ubuntu-22.04-clang-11`: Clang 11
 - `ubuntu-22.04-clang-14`: Clang 14
 - `ubuntu-22.04-gcc-9`: GCC 9
+- `ubuntu-22.04-gcc-11`: GCC 11
 
 **Ubuntu 24.04:**
 - `ubuntu-24.04-clang-16`: Clang 16
