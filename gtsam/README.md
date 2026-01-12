@@ -4,7 +4,9 @@ This image provides a pre-compiled environment for [GTSAM](https://github.com/bo
 
 ## Image Details
 
-- **Base Image:** `borglab/ubuntu-boost-tbb:latest` (Ubuntu 24.04 + Boost + TBB)
+- **Base Images:**
+  - `borglab/ubuntu-base:latest` (Ubuntu 24.04)
+  - `borglab/ubuntu-base:latest-tbb` (Ubuntu 24.04 + Boost + TBB)
 - **GTSAM Version:** `develop` branch (HEAD at time of build)
 - **Configuration:**
   - `CMAKE_BUILD_TYPE=Release`
@@ -32,6 +34,7 @@ WORKDIR /my-project
 # ...
 ```
 
+To use the version with TBB, 
 ## Build Instructions
 
 ```bash

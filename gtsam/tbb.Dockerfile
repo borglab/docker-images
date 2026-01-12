@@ -1,7 +1,7 @@
-# Ubuntu image with GTSAM installed.
+# Ubuntu image with GTSAM installed. Configured with Boost and TBB support.
 
 # Get the base Ubuntu image from Docker Hub
-FROM borglab/ubuntu-base:latest
+FROM borglab/ubuntu-base:latest-tbb
 
 # Install git
 RUN apt-get update && \
