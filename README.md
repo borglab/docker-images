@@ -25,7 +25,7 @@ Each subdirectory contains a README with specific details.
 
 You can build any of these images locally by navigating to the directory and running `docker build`. Check the specific READMEs for detailed instructions.
 
-Many of these images are available on Docker Hub under the `borglab` or `varunagrawal` namespaces.
+Many of these images are available on Docker Hub under the `borglab` namespaces.
 
 ## Contributing
 

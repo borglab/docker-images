@@ -1,7 +1,7 @@
-FROM varunagrawal/gtsam-manylinux:latest
+FROM borglab/gtsam-manylinux:latest
 
 # Disable GUI prompts
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install sdformat8
 RUN yum install -y ruby-devel tinyxml-devel eigen3-devel
