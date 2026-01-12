@@ -1,7 +1,7 @@
 # Basic Ubuntu 24.04 (noble) image with Boost and TBB installed. To be used for building further downstream packages.
 
 # Get the base Ubuntu image from Docker Hub
-FROM ubuntu:noble
+FROM borglab/ubuntu-base:latest
 
 # Disable GUI prompts
 ENV DEBIAN_FRONTEND=noninteractive

@@ -6,8 +6,8 @@ This repository hosts various Dockerfiles used for developing, testing, and dist
 
 Each subdirectory contains a README with specific details.
 
-- **[ubuntu-boost-tbb](./ubuntu-boost-tbb)**:
-  Base image (Ubuntu 24.04) with Boost and TBB libraries pre-installed. Serves as a foundation for other images.
+- **[ubuntu-base](./ubuntu)**:
+  Base image (Ubuntu 24.04) with Boost (and optionally, TBB) libraries pre-installed. Serves as a foundation for other images.
 
 - **[gtsam](./gtsam)**:
   A pre-compiled environment containing the latest `develop` branch of GTSAM. Useful for quick testing or as a base for downstream apps.
@@ -29,7 +29,7 @@ Many of these images are available on Docker Hub under the `borglab` or `varunag
 
 ## Contributing
 
-1.  Create a new branch for your changes.
-2.  If adding a new image, create a new directory with a `Dockerfile` and a `README.md`.
-3.  Test the build locally.
-4.  Submit a Pull Request.
+1. Create a new branch for your changes.
+2. If adding a new image, create a new directory with a `Dockerfile` and a `README.md`.
+3. Test the build locally.
+4. Submit a Pull Request.
