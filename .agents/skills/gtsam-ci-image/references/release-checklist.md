@@ -43,6 +43,24 @@ docker push borglab/gtsam-ci:<tag>
 
 Use `./build_and_push.sh borglab` only when the maintainer intentionally wants to rebuild and push all `gtsam-ci` images.
 
+## Local Cleanup
+
+After the new tag is published or Docker Hub has built it, offer cleanup commands for images built locally during validation:
+
+```bash
+docker image rm borglab/gtsam-ci:<tag>
+docker buildx prune -f
+```
+
+If a new base image was also built locally, include both tags in one command:
+
+```bash
+docker image rm borglab/gtsam-ci:<base-tag> borglab/gtsam-ci:<tag>
+docker buildx prune -f
+```
+
+Tell the maintainer that `docker buildx prune -f` removes unused BuildKit cache beyond the new image and may slow future local Docker rebuilds.
+
 ## GTSAM Repository Follow-Up
 
 After Docker Hub has the new image:
