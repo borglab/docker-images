@@ -9,6 +9,7 @@ The images are organized by Ubuntu version and Compiler version to ensure GTSAM 
 ### Base Images
 - `ubuntu-22.04-base`: Ubuntu 22.04 with common dependencies (CMake, Boost, Eigen, TBB, etc.).
 - `ubuntu-24.04-base`: Ubuntu 24.04 with common dependencies.
+- `ubuntu-26.04-base`: Ubuntu 26.04 with common dependencies.
 
 ### Compiler-Specific Images
 These extend the base images by setting up specific compilers.
@@ -22,6 +23,9 @@ These extend the base images by setting up specific compilers.
 **Ubuntu 24.04:**
 - `ubuntu-24.04-clang-16`: Clang 16
 - `ubuntu-24.04-gcc-14`: GCC 14
+
+**Ubuntu 26.04:**
+- `ubuntu-26.04-gcc-15`: GCC 15
 
 ## Build and Push Script
 
