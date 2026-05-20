@@ -27,6 +27,20 @@ You can build any of these images locally by navigating to the directory and run
 
 Many of these images are available on Docker Hub under the `borglab` namespaces.
 
+## Codex Skills
+
+This repository includes repo-local Codex skills under [`.agents/skills`](./.agents/skills). These skills give maintainers and AI agents project-specific workflows for common maintenance tasks.
+
+Current skills:
+
+- [`gtsam-ci-image`](./.agents/skills/gtsam-ci-image/SKILL.md): create or update GTSAM CI Docker images, smoke test them, and prepare the maintainer handoff for publishing the corresponding `borglab/gtsam-ci` Docker Hub tag.
+
+Example prompt to try from this repository:
+
+```text
+Use $gtsam-ci-image to add a new GTSAM CI Docker image for Ubuntu 26.04 with GCC 15. Create the needed Dockerfile(s), update the gtsam-ci README, build the image locally if Docker is available, smoke test it, and give me the maintainer handoff commands for publishing the new borglab/gtsam-ci tag. Do not push anything without asking me first.
+```
+
 ## Contributing
 
 1. Create a new branch for your changes.

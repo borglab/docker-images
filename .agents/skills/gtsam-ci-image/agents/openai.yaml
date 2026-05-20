@@ -1,0 +1,4 @@
+interface:
+  display_name: "GTSAM CI Image"
+  short_description: "Create and publish GTSAM CI Docker images"
+  default_prompt: "Use $gtsam-ci-image to add a new Ubuntu/compiler Docker image for GTSAM CI."

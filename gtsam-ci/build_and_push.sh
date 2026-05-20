@@ -10,6 +10,7 @@ set -x
 
 DOCKERHUB_USERNAME=$1
 DOCKER_REPOSITORY="gtsam-ci"
+DOCKER_PLATFORM="${DOCKER_PLATFORM:-linux/amd64}"
 
 if [ -z "$DOCKERHUB_USERNAME" ]; then
   echo "Usage: $0 <dockerhub-username>"
@@ -19,7 +20,7 @@ fi
 # First build and push the base images
 for base_dockerfile in *-base.Dockerfile; do
   tag=$(basename "$base_dockerfile" .Dockerfile)
-  docker build -t "$DOCKERHUB_USERNAME/$DOCKER_REPOSITORY:$tag" -f "$base_dockerfile" .
+  docker build --platform "$DOCKER_PLATFORM" -t "$DOCKERHUB_USERNAME/$DOCKER_REPOSITORY:$tag" -f "$base_dockerfile" .
   docker push "$DOCKERHUB_USERNAME/$DOCKER_REPOSITORY:$tag"
 done
 
@@ -30,6 +31,6 @@ for dockerfile in *.Dockerfile; do
   fi
 
   tag=$(basename "$dockerfile" .Dockerfile)
-  docker build -t "$DOCKERHUB_USERNAME/$DOCKER_REPOSITORY:$tag" -f "$dockerfile" .
+  docker build --platform "$DOCKER_PLATFORM" -t "$DOCKERHUB_USERNAME/$DOCKER_REPOSITORY:$tag" -f "$dockerfile" .
   docker push "$DOCKERHUB_USERNAME/$DOCKER_REPOSITORY:$tag"
 done
